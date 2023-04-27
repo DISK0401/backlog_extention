@@ -1,0 +1,34 @@
+{
+    "name": "BacklogExtensions",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "description": "This is an extension pack for Backlog.",
+    "icons": {
+      "16": "images/icons/icon.svg",
+      "48": "images/icons/icon.svg",
+      "128": "images/icons/icon.svg"
+    },
+    "host_permissions": [
+      "https://*.backlog.com/*",
+      "https://*.backlog.jp/*"
+    ],
+    "permissions": [
+      "clipboardWrite",
+      "activeTab"
+    ],
+    "content_scripts": [{
+      "matches": [
+        "https://*.backlog.com/*",
+        "https://*.backlog.jp/*"
+      ],
+      "css": [
+        "css/style.css"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }]
+  }
+  
