@@ -1,14 +1,22 @@
+console.debug("[DEBUG] load extension");
+
+let checkCount = 0;
 function main(event) {
-    console.log("[DEBUG]] main() called");
-    console.log("[DEBUG] event:");
+    console.debug("[DEBUG]] main() called");
+    console.debug("[DEBUG] event:");
     console.dir(event);
 
     const jsInitCheckTimer = setInterval(jsLoaded, 100);
 
     function jsLoaded() {
-        console.log("[DEBUG] jsLoaded() called");
+        console.debug("[DEBUG] jsLoaded() called("+checkCount+"回目)");
+
+        if(checkCount>= 10){
+            // 課題詳細画面以外の場合は見つからないのでキャンセルする
+            clearInterval(jsInitCheckTimer);
+        }
         if (document.querySelector("#copyKey-help")) {
-            console.log("[DEBUG] document.querySelector('#copyKey-help') found");
+            console.debug("[DEBUG] document.querySelector('#copyKey-help') found");
             clearInterval(jsInitCheckTimer);
 
             // 課題キーコピーのヘルプエリアを取得
@@ -16,6 +24,8 @@ function main(event) {
             htmlAndPlain(copyKeyHelpArea);
             onlyHTML(copyKeyHelpArea);
         }
+        checkCount++;
+        console.debug("[DEBUG] jsLoaded() ended");
     }
 }
 

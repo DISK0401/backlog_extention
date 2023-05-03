@@ -6,7 +6,7 @@ function copyToClipboard(data) {
     // クリップボードにコピーする
     navigator.clipboard.write(data).then(function() {
         copySuccess();
-        console.log('Async: Copying to clipboard was successful!');
+        console.info('Async: Copying to clipboard was successful!');
     }, function(err) {
         console.error('Async: Could not copy text: ', err);
     });
