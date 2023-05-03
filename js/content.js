@@ -1,5 +1,10 @@
 console.debug("[DEBUG] load extension");
 
+window.addEventListener('load', main, false);
+window.addEventListener('popstate', main);
+window.addEventListener('pushstate', main);
+window.addEventListener('replacestate', main);
+
 let checkCount = 0;
 function main(event) {
     console.debug("[DEBUG]] main() called");
