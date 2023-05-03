@@ -41,7 +41,7 @@ function main(event) {
 function onlyHTML(existingButton) {
     // ボタン要素を作成
     let newButton = document.createElement('button');
-    newButton.classList.add('icon-button', 'icon-button--default','simptip-position-right', 'simptip-movable', 'simptip-smooth','simptip-multiline', '-copy-button-multiline');
+    newButton.setAttribute('class', 'icon-button icon-button--default | simptip-position-right simptip-movable simptip-smooth simptip-multiline -copy-button-multiline');
     newButton.insertAdjacentHTML('afterbegin','<span class="copy-trigger"><svg role="image" class="icon -medium"><use xlink:href="/images/svg/sprite.symbol.svg#icon_copy"></use></svg></span>');
     newButton.dataset.tooltip = "スプレッドシート等一部システムでHTMLタグがそのまま出力されてしまう場合用コピー";
 
@@ -69,7 +69,7 @@ function onlyHTML(existingButton) {
 function htmlAndPlain(existingButton) {
     // ボタン要素を作成
     let newButton = document.createElement('button');
-    newButton.classList.add('icon-button', 'icon-button--default','simptip-position-right', 'simptip-movable', 'simptip-smooth','simptip-multiline', '-copy-button-multiline');
+    newButton.setAttribute('class', 'icon-button icon-button--default | simptip-position-right simptip-movable simptip-smooth simptip-multiline -copy-button-multiline');
     newButton.insertAdjacentHTML('afterbegin','<span class="copy-trigger"><svg role="image" class="icon -medium"><use xlink:href="/images/svg/sprite.symbol.svg#icon_copy"></use></svg></span>');
     newButton.dataset.tooltip = "基本的なリンク付きコピー";
 
